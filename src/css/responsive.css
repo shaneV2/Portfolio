@@ -1,0 +1,73 @@
+@media screen and (min-width: 856px){
+    .header h4,
+    .skills-section h4,
+    .projects-section h3,
+    .contact-section h4
+    .email-section h4{
+        font-weight: 900;
+    }
+    
+    .header > div {
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 37px;
+        grid-auto-columns: 1fr auto auto;
+    }
+
+    .header > div h3 {
+        font-size: 2rem;
+    }
+
+    .header > div > nav  > ul {
+        display: flex;
+        gap: 23px;
+    }
+
+    .header > div > button {
+        border-radius: 50px;
+    }
+
+    .header > div > button > img {
+        display: none;
+    }
+
+    .hero-section > div {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 46px;
+    }
+
+    .hero-section > div  .image-container {
+        width: 494.5px;
+        height: 546.86px;
+    }
+
+    .hero-section > div .introduction-section {
+        margin-top: 3.8rem;
+        flex: 1;
+    }
+
+    .email-section > div > div > form {
+        margin-top: 56px;
+        grid-auto-flow: column;
+        position: relative;
+    }
+
+    .email-inputs > label:first-child {
+        position: absolute;
+        top: -22px;
+    }
+
+    .email-inputs > :nth-child(3) {
+        margin-top: 12px;
+    }
+
+    .second-email-inputs {
+        gap: 10px;
+    }
+
+    .second-email-inputs input[type="submit"] {
+        width: min-content;
+        padding: 10px 35px;
+    }
+}
