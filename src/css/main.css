@@ -10,8 +10,10 @@
 
     --line-color: #BEBEBE;
 
+    --header-text-color: #222222;
     --project-text-color: #626262;
     --send-to-text-color: #D16E04;
+    --pl-color: #575757;
     --contact-section-background-color: #636161;
 
     --input-background-color: #EFEFEF; 
@@ -41,7 +43,7 @@
 .email-section > div {
     margin: auto;
     width: 93%;
-    max-width: 1250px;
+    max-width: 960px;
     min-width: 350px;
 }
 
@@ -49,6 +51,7 @@
 
 .header {
     margin-top: 20px;
+    color: var(--header-text-color);
 }
 
 .header > div {
@@ -75,6 +78,7 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
+    color: #3D3D3E;
     background-color: var(--orange-color);
     border: none;
     font-size: 1rem;
@@ -88,6 +92,11 @@
 /* Hero Section */
 .hero-section {
     margin-top: 35px;
+}
+
+.hero-section > div {
+    box-sizing: border-box;
+    padding: 0 30px;
 }
 
 .hero-section > div .image-container {
@@ -115,7 +124,7 @@
 }
 
 .contact-now-btn {
-    padding: 10px 15px;
+    padding: 13px 34px;
     border: 2px solid #FF8400;
     background-color: inherit;
     border-radius: 50px;
@@ -147,7 +156,7 @@
     padding: 11px 30px;
     background-color: #EFEFEF;
     color: #5F5F5F;
-    font-weight: 500;
+    font-weight: 430;
     border-radius: 10px;
 }
 
@@ -160,6 +169,7 @@
 .skills-section > div > div:nth-child(2){
     margin-top: 22px;
     display: grid;
+    gap: 14px;
     padding: 0px 30px 0;
     grid-auto-flow: column;
     grid-template-columns: auto 1fr;
@@ -170,7 +180,7 @@
     display: grid;
     text-align: right;
     padding: 10px 10px 10px 0;
-    border-right: 2px solid var(--introduction-statement-color);
+    border-right: 2px solid #D1D1D1;
     font-size: .8rem;
     gap: 13px;
 }
@@ -179,7 +189,7 @@
     display: grid;
     text-align: right;
     font-size: .8rem;
-    gap: 27px;
+    gap: 26px;
 }
 
 .skills-section .language-proficiency > div {
@@ -272,8 +282,8 @@
 }
 
 .projects-section > div h3 {
-    color: #5F5F5F;
-    font-weight: 500;
+    color: var(--send-to-text-color);
+    font-weight: 430;
 }
 
 .projects-section > div > div {
@@ -295,7 +305,7 @@
 }
 
 .project > p:nth-child(2) > a {
-    color: #D16E04;
+    color: var(--send-to-text-color);
 }
 
 /* Contact Section */
@@ -305,13 +315,18 @@
 }
 
 .contact-section > div h4 {
-    font-weight: 600;
+    font-weight: 430;
+    font-size: 1.2rem;
 }
 
 .contact-section > div {
+    color: var(--contact-section-background-color);
     display: grid;
     gap: 18px;
-    color: var(--contact-section-background-color);
+}
+
+.contact-section > div > div {
+    color: #636161;
 }
 
 /* Send-To Section */
@@ -320,7 +335,8 @@
 }
 .email-section h4 {
     text-align: center;
-    font-weight: 600;
+    font-weight: 430;
+    font-size: 1.2rem;
 }
 
 .email-section > div {
@@ -334,12 +350,23 @@
 
 .email-inputs {
     display: flex;
+    margin-top: 20px;
     flex-direction: column;
 }
 
+.subject-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
+.email-inputs input:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.email-inputs > label:first-child,
 .email-inputs input:nth-child(2) {
-    margin-top: 2px;
+    margin-bottom: 5px;
 }
 
 .email-inputs input, 
@@ -347,7 +374,7 @@
     width: 100%;
     box-sizing: border-box;
     display: block;
-    padding: 10px;
+    padding: 12px 10px;
     background-color: var(--input-background-color);
     border: 1px solid var(--input-border-color);
 }
@@ -355,6 +382,7 @@
 .second-email-inputs input[type="submit"] {
     width: 100%;
     padding: 10px;
+    font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     background-color: #717171;
@@ -382,15 +410,30 @@ footer {
     min-width: 350px;
     width: 100%;
     background-color: var(--orange-color);
-    height: 54px;
+    height: 10px;
 }
 
+@media screen and (min-width: 575px) {
+    .projects-section > div > div {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .projects-section > div > div > div:last-of-type{
+        grid-column: span 2;
+    }
+
+    .email-inputs {
+        margin: 0;
+    }
+}
 
 @media screen and (min-width: 856px){
     .header h4,
     .skills-section h4,
     .projects-section h3,
-    .contact-section h4 {
+    .contact-section h4,
+    .email-section h4 {
         font-size: 1.2rem;
     }
     
@@ -413,8 +456,7 @@ footer {
 
     .header > div > button {
         border-radius: 50px;
-        padding: 15px 28px;
-
+        padding: 16px 28px;
     }
 
     .header > div > button > img {
@@ -437,8 +479,44 @@ footer {
         flex: 1;
     }
 
+    /* Skills */
+    .skills-section .language-proficiency > div > .php-line,
+    .skills-section .language-proficiency > div > .tw-line,
+    .skills-section .language-proficiency > div > .reactjs-line,
+    .skills-section .language-proficiency > div > .git-line{
+        height: 4px;
+    }
+
+    .skills-section .language-proficiency {
+        gap: 32px;
+    }
+
+    .languages > p {
+        color: var(--pl-color);
+        font-size: 1.1rem;
+    }
+
+    .outer-circle {
+        width: 11px;
+        height: 11px;
+    }
+    .inner-circle {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* Project */
+    .projects-section > div > div {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .projects-section > div > div > div:last-of-type {
+        grid-column: auto;
+    }
+
+    /* Email */
     .email-section > div > div > form {
-        margin-top: 56px;
+        margin-top: 30px;
         grid-auto-flow: column;
         position: relative;
     }
@@ -446,10 +524,6 @@ footer {
     .email-inputs > label:first-child {
         position: absolute;
         top: -22px;
-    }
-
-    .email-inputs > :nth-child(3) {
-        margin-top: 12px;
     }
 
     .second-email-inputs {
